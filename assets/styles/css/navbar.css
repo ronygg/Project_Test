@@ -1,0 +1,83 @@
+@import "root.css  ";
+
+.navbar {
+    background-color: var(--color-bg-200);
+}
+
+.offcanvas-start-custom {
+    width: 100px;
+}
+
+.dropdown-user {
+    margin-left: auto;
+}
+
+.dropdown-menu .dropdown-item{
+    color:var(--color-black-800);
+}
+.dropdown-menu .dropdown-item:hover{
+    background-color:var(--color-black-700);
+    color: var(--color-primary-200);
+}
+
+.dropdown-menu .dropdown-item:active{
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-100);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .dropdown-user {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .navbar-toggler {
+        order: 1;
+        z-index: 1020;
+    }
+
+    .navbar-brand {
+        order: 2;
+    }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+}
+
+/* Estilos para el offcanvas */
+.offcanvas-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+}
+
+.offcanvas-body {
+    padding: 1rem 1.5rem;
+}
+
+.offcanvas-body .nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    color: var(--color-black-800);
+}
+
+.offcanvas-body .nav-link:hover {
+    background-color: var(--color-black-700);
+    color: var(--color-primary-200);
+}
+.offcanvas-body .nav-link:active {
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-100);
+}

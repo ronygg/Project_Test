@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+{% block title %}Registrar {{ entity }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        <div class="project-title">
+            <h1>{{ action }} {{ entity }}</h1>
+        </div>
+
+        <div class="project-form-container">
+            {{ form_start(form, {'attr': {
+                'class': 'w-100 mx-auto',
+                'style': 'max-width: 800px;'
+            }}) }}
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    {{ form_label(form.name) }}
+                    {% if form.name.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.name) }}
+                    {% if form.name.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.name.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col-md-3">
+                    {{ form_label(form.lastname) }}
+                    {% if form.lastname.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.lastname) }}
+                    {% if form.lastname.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.lastname.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    {{ form_label(form.username) }}
+                    {% if form.username.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.username) }}
+                    {% if form.username.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.username.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    {{ form_label(form.email) }}
+                    {% if form.email.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.email) }}
+                    {% if form.email.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.email.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    {{ form_label(form.role) }}
+                    {% if form.role.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.role) }}
+                    {% if form.role.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.role.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    {{ form_label(form.plainPassword.first) }}
+                    {% if form.plainPassword.first.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.plainPassword.first) }}
+                    {% if form.plainPassword.first.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.plainPassword.first.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col-md-3">
+                    {{ form_label(form.plainPassword.second) }}
+                    {% if form.plainPassword.second.vars.required %}
+                        <span class="project-form-required">*</span>
+                    {% endif %}
+                    {{ form_widget(form.plainPassword.second) }}
+                    {% if form.plainPassword.second.vars.errors|length > 0 %}
+                        <ul>
+                            {% for error in form.plainPassword.second.vars.errors %}
+                                <li class="project-form-error-msg">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-primary" type="submit" style="width: 85%">
+                    {{ button_label|default('Guardar') }}
+                </button>
+            </div>
+            {{ form_end(form) }}
+            <a href="{{ path('app_user_index') }}">back to list</a>
+        </div>
+    </div>
+{% endblock %}

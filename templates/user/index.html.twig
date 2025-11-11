@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ entities }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        <div class="project-title">
+            <h1>Listado de {{ entities }}</h1>
+        </div>
+
+        <div class="project-table-container">
+            <div class="project-table-button-section">
+                <a href="{{ path( 'app_user_new' ) }}" class="btn btn-outline-primary">Nuevo</a>
+            </div>
+            <div class="project-table">
+                <table class="datatable table table-striped" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                <a href="{{ path('app_user_edit', {'id':user.id}) }}"
+                                   class="btn btn-sm btn-outline-warning">Editar</a>
+                                <a href="{{ path ('app_user_delete', {'id':user.id}) }}"
+                                   class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                <a href="{{ path ('app_password_update', {'id':user.id}) }}"
+                                   class="btn btn-sm btn-outline-secondary">Cambiar Contraseña</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

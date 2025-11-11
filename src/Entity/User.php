@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USERNAME', fields: ['username'])]
 #[UniqueEntity(fields: ['username'], message: 'Este nombre de usuario ya existe')]
 #[UniqueEntity(fields: ['email'], message: 'Este correo electrónico ya está registrado')]
 class User extends Loggable implements UserInterface, PasswordAuthenticatedUserInterface
@@ -35,7 +36,6 @@ class User extends Loggable implements UserInterface, PasswordAuthenticatedUserI
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Complete este campo')]
     private ?string $password = null;
 
     #[ORM\JoinColumn(nullable: false)]

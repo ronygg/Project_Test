@@ -12,14 +12,15 @@ class Loggable
     #[Ignore]
     private ?User $createBy = null;
 
+
     #[ORM\ManyToOne]
     #[Ignore]
     private ?User $updateBy = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTime $createDate = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTime $updateDate = null;
 
     public function __construct(

@@ -1,0 +1,16 @@
+# USER
+user.created.success: '✅ Ususario creado satisfactoriamente!'
+user.updated.success: '✅ Ususario actualizado satisfactoriamente!'
+user.deleted.success: '✅ Ususario eliminado satisfactoriamente!'
+user.created.failure: '❌ Algo falló al crear el Ususario!'
+user.updated.failure: '❌ Algo falló al actualizar el Ususario!'
+user.deleted.failure: '❌ Algo falló al eliminar el Ususario!'
+user.deleted.usedElement: '❌ No se puede eliminar el Ususario porque está siendo utilizado!'
+user.not_found: 'Ususario no encontrada.'
+
+# PASSWORD
+password.updated.success: '✅ Contraseña actualizada satisfactoriamente!'
+password.updated.failure: '❌ Algo falló al actualizar la contraseña satisfactoriamente!'
+password.not_found: '❌ La contraseña actual no coincide!'
+
+

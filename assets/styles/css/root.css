@@ -1,0 +1,10 @@
+:root{
+    --color-bg-100: #ffffff;
+    --color-bg-200: rgb(226, 217, 230, 0.29);
+    --color-black-700: #9191914d;
+    --color-black-800: #000000;
+    --color-primary-100: var(--color-bg-100);
+    --color-primary-200: #0d6efd;
+    --color-danger-500: #dc3545;
+
+}
